@@ -9,7 +9,7 @@ router.post('/', async (req, res) => {
     try {
         const { premiumLevel } = req.body;
         if (!premiumLevel) {
-            return res.status(400).json({ message: 'Please enter the level of your premium service.' });
+            return res.status(400).json({ message: 'Please enter all information.' });
         }
         const paymentIntent = await stripe.paymentIntents.create({
             amount: 500,
